@@ -1,0 +1,38 @@
+.day {
+	font-size: 18px;
+}
+
+.matchday, .match {
+	color: black;
+}
+
+.hours {
+	color: #333;
+}
+
+.match {
+	margin: 20px;
+}
+.teams-vs {
+	font-size: 16px;
+	
+}
+
+.tv-channels ul  {
+	padding-left: 0px!important;
+}
+
+.tv-channels ul li {
+	display: inline-block;
+}
+
+.rtp img, .sporttv img {
+	height: auto;
+	width: 50px;
+}
+
+.wc-logo img {
+	margin: 20px;
+	height: 100px;
+	width: auto;
+ }

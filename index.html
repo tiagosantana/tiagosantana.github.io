@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="http://getbootstrap.com/assets/ico/favicon.ico">
+
+    <title> </title>
+</head>
+<body cz-shortcut-listen="true" ng-app="MyAppModule">
+	<div class="site-wrapper">
+      <div class="site-wrapper-inner">
+		<div class="cover-container" ng-controller="MatchesListCtrl">
+
+			<div class="wc-logo">
+				<img src="img/wc.png"/>
+			</div>
+			 
+			 <div class="inner cover">
+					<div class="row">			
+						<div class=".col-xs-12 .col-sm-6 .col-md-8 matchday thumbnail" ng-repeat="matchDay in matchDays | orderBy: 'round.start_at' | dateFilter:'round.start_at'">
+							<div class="day">{{ matchDay.round.start_at }}</div>
+							<div class="match" ng-repeat="game in matchDay.games">
+								<div class="hours">{{ game.hour }}</div>
+								<div class="teams-vs">{{ game.team1_title }} - {{ game.team2_title }}</div>
+								<div class="tv-channels">
+									<ul>
+										<li class="rtp" ng-if="game.rtp != null">
+											<a href="http://www.rtp.pt/rtp1/"><img alt="RTP 1" src="img/rtp.png"/></a>
+										</li>
+										<li class="sporttv">
+											<a href="http://www.sporttv.pt/"><img alt="SPORT TV" src="img/sporttv.jpg"/></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+			  </div>
+			
+		</div>
+	  </div>
+    </div>
+	
+	<!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/cover.css" rel="stylesheet">
+	<link href="css/shelf.css" rel="stylesheet">
+	<style type="text/css"></style><style type="text/css"></style><style id="holderjs-style" type="text/css"></style>
+	<script type="text/javascript" src="angular/1.1.5/angular.js"></script>
+	<script type="text/javascript" src="angular/1.1.5/angular-resource.js"></script>
+	<script type="text/javascript" src="js/controllers.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="js/angular-route.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/ui-bootstrap-tpls-0.10.0.min.js"></script>
+	<script src="js/docs.min.js"></script>
+</body>
+</html>
