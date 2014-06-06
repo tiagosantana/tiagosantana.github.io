@@ -19,14 +19,23 @@
 			<div class="wc-logo">
 				<img src="img/wc.png"/>
 			</div>
-			 
-			 <div class="inner cover">
+			 <div class="reset-filter" ng-if="teamFilter == true" ng-cloak>
+				<a href="#" ng-click="init()">Remover Filtro</a>
+			</div>
+			 <div class="inner cover" ng-cloak>
 					<div class="row">			
 						<div class=".col-xs-12 .col-sm-6 .col-md-8 matchday thumbnail" ng-repeat="matchDay in matchDays | orderBy: 'round.start_at' | dateFilter:'round.start_at'">
 							<div class="day">{{ matchDay.round.start_at }}</div>
 							<div class="match" ng-repeat="game in matchDay.games">
 								<div class="hours">{{ game.hour }}</div>
-								<div class="teams-vs">{{ game.team1_title }} - {{ game.team2_title }}</div>
+								<div class="teams-vs" ng-style="style(game)">
+									<a href="#" ng-click="searchTeam(game.team1_title)">
+										<img class="flag" ng-src="img/flags/{{game.team1_code}}.gif"/>{{ game.team1_title }}
+									</a> - 
+									<a href="#" ng-click="searchTeam(game.team2_title)">
+										{{ game.team2_title }}<img class="flag" ng-src="img/flags/{{game.team2_code}}.gif"/>
+									</a>
+								</div>
 								<div class="tv-channels">
 									<ul>
 										<li class="rtp" ng-if="game.rtp != null">

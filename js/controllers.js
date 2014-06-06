@@ -3,9 +3,9 @@ angular.module("MyAppModule", [ 'ngResource', 'ui.bootstrap' ]);
 function MatchesListCtrl($scope, $modal, $resource, $http) {
 
 	$scope.matchDays = [];
-
+	$scope.teamFilter = false;
 	$scope.init = function() {
-
+		$scope.teamFilter = false;
 		$scope.matchDays = [
 			{"event":{"key":"world.2014","title":"World Cup 2014"},"round":{"pos":1,"title":"Matchday 1","start_at":"2014/06/12","end_at":"2014/06/12"},"games":[{"rtp":"rtp","team1_key":"bra","team1_title":"Brazil","team1_code":"BRA","team2_key":"cro","team2_title":"Croatia","team2_code":"CRO","play_at":"2014/06/12","hour":"21:00","score1":null,"score2":null,"score1ot":null,"score2ot":null,"score1p":null,"score2p":null}]},
 
@@ -41,7 +41,6 @@ function MatchesListCtrl($scope, $modal, $resource, $http) {
 		for(var i = 0; i < $scope.matchDays.length; i++) {
 			var games = $scope.matchDays[i].games;
 			for(var j = 0; j < games.length; j++) {
-				console.log(games[j].hour);
 				if(angular.isUndefined(games[j].hour) || games[j].hour === null){
 					if(j === 0) {
 						games[j].hour = "17:00";
@@ -59,23 +58,37 @@ function MatchesListCtrl($scope, $modal, $resource, $http) {
 	
 	$scope.init();
 	
-	$scope.fetchMatch = function(matchDayNumber) {
-		$http({
-				method : 'jsonp',
-				url : 'http://footballdb.herokuapp.com/api/v1/event/world.2014/round/'+matchDayNumber,
-				params : {
-					callback : 'JSON_CALLBACK'
+	$scope.searchTeam = function(teamName) {
+		if($scope.teamFilter == true) {
+			$scope.teamFilter = false;
+			$scope.init();
+			$scope.searchTeam(teamName);
+		}
+		$scope.teamFilter = true;
+		var newItems = [];
+		for(var i = 0; i < $scope.matchDays.length; i++) {
+			var newGames = [];
+			var teamFound = false;
+			for(var j = 0; j < $scope.matchDays[i].games.length; j++) {
+				if($scope.matchDays[i].games[j].team1_title == teamName || $scope.matchDays[i].games[j].team2_title == teamName) {
+					newGames.push($scope.matchDays[i].games[j]);
+					teamFound = true;
 				}
-			}).success(function(data, status, headers, config) {
-				$scope.matchDays.push(data);
-			}).error(function(data, status, headers, config) {
-				// called asynchronously if an error occurs
-				// or server returns response with an error status.
-				alert(status);
-				return null;
-			});
+			}
+			if(teamFound == true) {
+				$scope.matchDays[i].games = newGames;
+				newItems.push($scope.matchDays[i]);
+			}
+		}
+		$scope.matchDays = newItems;
 	}
 
+	$scope.style = function(game) {
+		if(game.team1_title == "Portugal" || game.team2_title == "Portugal") {
+			return {"font-size":"18px"};
+		}
+	}
+	
 }
 
 angular.module("MyAppModule", [ 'ngResource', 'ui.bootstrap' ]).filter('dateFilter', function () {
