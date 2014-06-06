@@ -30,10 +30,10 @@
 								<div class="hours">{{ game.hour }}</div>
 								<div class="teams-vs" ng-style="style(game)">
 									<a href="#" ng-click="searchTeam(game.team1_title)">
-										<img class="flag" ng-src="img/flags/{{game.team1_code}}.gif"/>{{ game.team1_title }}
+										<img class="flag" ng-src="img/flags/{{game.team1_code | lowercase}}.gif"/>{{ game.team1_title }}
 									</a> - 
 									<a href="#" ng-click="searchTeam(game.team2_title)">
-										{{ game.team2_title }}<img class="flag" ng-src="img/flags/{{game.team2_code}}.gif"/>
+										{{ game.team2_title }}<img class="flag" ng-src="img/flags/{{game.team2_code | lowercase}}.gif"/>
 									</a>
 								</div>
 								<div class="tv-channels">
