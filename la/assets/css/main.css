@@ -435,6 +435,32 @@ a:after {
 	margin-left: 10px!important;
 }
 
+.logo-img-container {
+	width: 120px;
+	height: 136px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	background: url(../img/logo.png) no-repeat;
+	background-size: 120px 105px;
+	background-repeat: no-repeat;
+}
+
+@media all and (max-width: 1300px) {
+	.logo-img-container {
+			width: 120px;
+			height: 150px;
+			background: url(../img/logo_lettering.png) no-repeat;
+			background-size: 120px 105px;
+			background-repeat: no-repeat;
+	}
+	
+	.navbar-brand {
+		display: none!important;
+	}
+}
+
 @media all and (max-width: 1200px) {
 	.navbar-inverse .navbar-brand {
 		font-size: 19px;
@@ -442,24 +468,12 @@ a:after {
 	 
 	.philosophy-img {
 		margin-top: -20px!important;
-	}
-}
-
-.logo-img {
-	width: auto;
-	height: 120px;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 9999;
-}
-
-@media all and (max-width: 1200px) {
-	.philosophy-img {
 		width: 70%!important;
 		height: auto!important;
 	}
+	
 }
+
 @media (max-width: 320px){
 	.navbar-inverse .navbar-brand {
 		font-size: 16px!important;
