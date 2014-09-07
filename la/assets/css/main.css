@@ -431,6 +431,10 @@ a:after {
 	font-weight: 400!important;
 }
 
+.navbar-brand {
+	margin-left: 10px!important;
+}
+
 @media all and (max-width: 1200px) {
 	.navbar-inverse .navbar-brand {
 		font-size: 19px;
@@ -439,6 +443,15 @@ a:after {
 	.philosophy-img {
 		margin-top: -20px!important;
 	}
+}
+
+.logo-img {
+	width: auto;
+	height: 120px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
 }
 
 @media all and (max-width: 1200px) {
