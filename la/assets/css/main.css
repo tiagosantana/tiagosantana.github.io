@@ -447,6 +447,20 @@ a:after {
 	background-repeat: no-repeat;
 }
 
+.player-container  {
+	border: 1px solid #ddd;
+	padding: 28px;
+	max-width: 80%;
+	margin: 0 auto;
+	background: #F5F5F5;
+	margin-bottom: 40px;
+}
+
+.player-container img {
+	width: 150px;
+	border: 1px solid #dedede;
+}
+
 @media all and (max-width: 1300px) {
 	.logo-img-container {
 			width: 120px;
