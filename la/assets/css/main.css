@@ -98,6 +98,10 @@ a:after {
 	background: #4169E1
 }
 
+.navbar-nav > a:hover {
+	transition: all 0.3s ease-out 0s;
+}
+
 .navbar-nav > .active > a:hover {
 	background-color: #3B9CF8!important;
 }
