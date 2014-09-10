@@ -461,6 +461,10 @@ a:after {
 	border: 1px solid #dedede;
 }
 
+.partner-container {
+	margin-bottom: 40px;
+}
+
 @media all and (max-width: 1300px) {
 	.logo-img-container {
 			width: 120px;
