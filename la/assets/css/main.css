@@ -467,11 +467,11 @@ a:after {
 
 @media all and (max-width: 1300px) {
 	.logo-img-container {
-			width: 120px;
-			height: 150px;
-			background: url(../img/logo_lettering.png) no-repeat;
-			background-size: 120px 105px;
-			background-repeat: no-repeat;
+		width: 140px;
+		height: 150px;
+		background: url(../img/logo_lettering.png) no-repeat;
+		background-size: 140px 135px;
+		background-repeat: no-repeat;
 	}
 	
 	.navbar-brand {
