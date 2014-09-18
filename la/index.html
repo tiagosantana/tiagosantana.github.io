@@ -17,7 +17,7 @@
 
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
-
+	<link href="assets/css/flickerplate.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -47,9 +47,19 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="index.html">HOME</a></li>
             <li><a href="partners.html">PARTNERS / LAWYERS</a></li>
-			<li><a href="athletes.html">ATHLETES</a></li>
 			<li><a href="contact.html">CONTACT</a></li>
 			<li><a href="imprint.html">IMPRINT</a></li>
+			<li class="chang-lang-container">
+				<a class="change-lang-flag" href="">
+					<img src="assets/img/por.gif" />
+				</a>
+				<a class="change-lang-flag" href="">
+					<img src="assets/img/ger.gif" />
+				</a>
+				<a class="change-lang-flag" href="">
+					<img src="assets/img/eng.gif" />
+				</a>
+			</li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -63,13 +73,25 @@
 				<h2>– it’s more about creating a general view of an athlete: Technique, Teamwork, Fitness Basics and Social Skills.</h2>
 				</div>
 			</div><!-- row -->
+			<br/>
+			<div class="row centered shortcuts-container">
+				<div class="col-lg-6 centered">
+					<div class="shortcut-button" id="about-me-button">
+						About Me
+					</div>
+				</div>
+				<div class="col-lg-6 text-center">
+					<div class="shortcut-button" id="players-button">
+						Players
+					</div>
+				</div>
+			</div>
 		</div><!-- container -->
 	</div><!-- headerwrap -->
-
+	
 <!-- ABOUT ME -->
-	<div class="container w">
-		<div class="row centered">
-			
+	<div class="container w" id="about-me">
+		<div class="row centered">		
 			<div class="col-lg-8">
 				<h2>ABOUT ME</h2>
 				<h4>Leonel Alexandre</h4>
@@ -84,6 +106,44 @@
 		<br>
 		<br>
 	</div><!-- container -->
+	
+	<!-- PLAYERS SLIDESHOW -->
+	<div class="player-slideshow" id="players">
+		<ul>
+			<li data-background="assets/img/miguel-santos.jpg">
+				<div class="flick-title">Miguel Santos</div>
+				<div class="flick-sub-text player-stats">
+					<img src="assets/img/benfica.png" class="player-club-logo"/>
+					Benfica
+				</div>
+				<div class="flick-sub-text player-stats">
+					Goalkeeper - 1994-10-21 - 193 cm - 
+					&nbsp;<img class="player-nat" src="assets/img/por2.jpg" />
+				</div>
+			</li>
+			<li data-background="assets/img/kifuta.jpg">
+				<div class="flick-title">Kifuta</div>
+				<div class="flick-sub-text player-stats">
+					<img src="assets/img/rehden.png" class="player-club-logo"/>
+					BSV Rehden
+				</div>
+				<div class="flick-sub-text player-stats">
+					Forward - 1988-01-08 - 180 cm - 
+					&nbsp;<img class="player-nat" src="assets/img/congo.gif" />
+				</div>
+			</li>
+			<li data-background="assets/img/ouattara.jpg">
+				<div class="flick-title">Bassalia Ouattara</div>
+				<div class="flick-sub-text player-stats">
+					<img src="assets/img/atletico.png" class="player-club-logo"/>
+					Atlético CP
+				</div>
+				<div class="flick-sub-text player-stats">
+					Forward - 1992-04-24 - 173 cm - 
+					&nbsp;<img class="player-nat" src="assets/img/civ.gif" />
+				</div>
+			</li>
+	</div>
 
 	<!-- FOOTER -->
 	<div id="f">
@@ -112,5 +172,44 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/flickerplate.js"></script>
+	<script src="assets/js/jquery-finger-v0.1.0.js"></script>
+	<script src="assets/js/modernizr-custom-v2.7.1.js"></script>
+	<script>
+		$(document).ready(function() {	
+			var headerWrapHeight = $(window).height() - $('.navbar').height();
+			if(headerWrapHeight < 620)
+				headerWrapHeight = 620;
+			$('#headerwrap').css("height", headerWrapHeight);
+			  
+			 $('.player-slideshow').flicker({
+					arrows: true,
+					arrows_constraint: false,
+					auto_flick: true,
+					auto_flick_delay: 10,
+					block_text: true,
+					dot_alignment: 'center',
+					dot_navigation: true,
+					flick_animation: 'transition-slide',
+					flick_position: 1,
+					theme: 'dark'
+			});
+			
+			$('#about-me-button').click(function(){
+				$("html, body").animate({
+					scrollTop: $('#about-me').position().top - $('.navbar').height() - 30
+				}, 'slow', 'swing');
+			
+			});
+			
+			$('#players-button').click(function(){
+				$("html, body").animate({
+					scrollTop: $('#players').position().top - $('.navbar').height() - 30
+				}, 'slow', 'swing');
+			
+			});
+			
+		});
+	</script>
   </body>
 </html>
