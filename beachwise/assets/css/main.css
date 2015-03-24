@@ -485,7 +485,7 @@ a:after {
 
 .big.blue {
 	width: 100%;
-	background: #166EA2;
+	background: rgba(22, 110, 162, 0.8);
 	padding: 20px;
 	padding-bottom: 0px;
 }
@@ -498,6 +498,10 @@ a:after {
 	width: 80%;
 	height: 400px;
 	margin: 0 auto;
+}
+
+.w, .blue {
+	padding: 40px 20px;
 }
 
 @media all and (max-width: 1300px) {
