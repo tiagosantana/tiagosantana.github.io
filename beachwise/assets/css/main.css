@@ -428,14 +428,14 @@ a:after {
 
 #head-logo {
 	height: 30px;
-	width: 210px;
-	background-image: url('../img/beachwise_small_white.png');
+	width: 52px;
+	background-image: url('../img/bw-logo-white-small.png');
 	background-repeat: no-repeat;
-	background-size: 210px 30px;
+	background-size: auto 30px;
 }
 
 #head-logo:hover {
-	background-image: url('../img/beachwise_small_blue.png');
+	background-image: url('../img/bw-logo-blue-small.png');
 }
 
 .logo-img-container {
@@ -490,7 +490,7 @@ a:after {
 	padding-bottom: 0px;
 }
 
-.big.blue h2, .big.blue h4, .big.blue h5{
+.big.blue h2, .big.blue h3, .big.blue h4, .big.blue h5{
 	color: white;
 }
 
@@ -501,7 +501,25 @@ a:after {
 }
 
 .w, .blue {
-	padding: 40px 20px;
+	padding: 40px 20px!important;
+}
+
+.slideshow-logo {
+	margin-bottom: 50px;
+}
+
+.info-portrait {
+	width: auto;
+	height: 84px;
+}
+
+.contact-info-portrait {
+	width: auto;
+	height: 32px;
+}
+
+.infography, .contact-infography  {
+	margin: 10px 0px;
 }
 
 @media all and (max-width: 1300px) {
