@@ -107,21 +107,21 @@
 				<div class="col-lg-12">
 					<h2>RESERVE O SEU MUDAKI ATÉ 30 DE ABRIL</h2>
 					<br/>
-					<img alt="MUDAKI" src="./assets/img/change.png" style="width: auto; height: 110px;" />
+					<img alt="MUDAKI" src="./assets/img/change.png" class="change-img" />
 					<br/>
 					<a href="catalogo-beachwise.pdf" target="_blank" class="catalog-link">
-						<h3>Faça aqui o download do Catálogo BeachWise</h3>
+						<h2>Faça aqui o download do Catálogo BeachWise</h2>
 					</a>
 					<br/>
 					<div class="row centered">		
 						<div class="col-lg-4" style="margin-bottom: 20px;">
-							<img src="./assets/img/foto-3.jpg" alt="MUDAKI" class="mudaki-photo" style="width: 300px; height: 200px;">
+							<img src="./assets/img/foto-3.jpg" alt="MUDAKI" class="mudaki-photo">
 						</div><!-- col-lg-4 -->
 						<div class="col-lg-4" style="margin-bottom: 20px;">
-							<img src="./assets/img/foto-4.jpg" alt="MUDAKI" class="mudaki-photo" style="width: 300px; height: 200px;">
+							<img src="./assets/img/foto-4.jpg" alt="MUDAKI" class="mudaki-photo">
 						</div><!-- col-lg-4 -->
 						<div class="col-lg-4" style="margin-bottom: 20px;">
-							<img src="./assets/img/foto-5.jpg" alt="MUDAKI" class="mudaki-photo" style="width: 300px; height: 200px;">
+							<img src="./assets/img/foto-5.jpg" alt="MUDAKI" class="mudaki-photo">
 						</div><!-- col-lg-4 -->
 					</div><!-- row -->
 				</div><!-- col-lg-12 -->
@@ -151,6 +151,9 @@
 				<h5>Consulte aqui onde pode trocar de roupa num MUDAKI, numa praia perto de si.</h5>
 				<br/>
 				<div id="map"></div> <!-- Google Map -->
+				<a href="catalogo-beachwise.pdf" target="_blank" class="catalog-link">
+					<h4>O mapa encontra-se em construção. Descarregue aqui o nosso mapa para ver os locais onde se encontram os nossos MUDAKI.</h4>
+				</a>
 			</div><!-- col-lg-12 -->
 		</div><!-- row -->
 		<br>
@@ -256,14 +259,17 @@
 		$(document).ready(function() {	
 		   var windowHeight = $(window).height() - $('.navbar').height() + 4;
 			
-			$('#bw-head').height(windowHeight);
-			$('.full-page').css("min-height", windowHeight);
-		
-			var headerWrapHeight = windowHeight;
-			if(headerWrapHeight < 600)
-				headerWrapHeight = 600;
-			$('#headerwrap').css("height", headerWrapHeight);
-						
+			function resizeSections(){
+				$('#bw-head').height(windowHeight);
+				$('.full-page').css("min-height", windowHeight);
+			}
+			
+			resizeSections();
+			
+			$(window).resize(function(){
+				resizeSections();
+			});
+			
 			$(window).scroll(function(){
 			    var scrollPos = $(document).scrollTop();
 				$('#menu a').each(function () {
@@ -334,16 +340,16 @@
 				
 				// INSERIR MARCADORES AQUI!
 				// coordenadas, nome da localização, tipo de mudaki
-				createMarker(new google.maps.LatLng(41.849744, -8.866315, 0.0), "Moledo 1", "Premium", map);
-				createMarker(new google.maps.LatLng(41.84891700000001, -8.866267, 0.0), "Moledo 2", "Premium", map);
-				createMarker(new google.maps.LatLng(41.847530000000006, -8.866439, 0.0), "Moledo 3", "Premium", map);
-				createMarker(new google.maps.LatLng(41.813842, -8.865452, 0.0), "Vila Praia de Âncora 1", "Standard", map);
-				createMarker(new google.maps.LatLng(41.812963, -8.864288, 0.0), "Vila Praia de Âncora 2", "Standard", map);
-				createMarker(new google.maps.LatLng(41.812327, -8.863333, 0.0), "Vila Praia de Âncora 3", "Standard", map);
-				createMarker(new google.maps.LatLng(41.647639, -8.825219, 0.0), "Amorosa 1", "Standard", map);
-				createMarker(new google.maps.LatLng(41.647639, -8.825219, 0.0), "Amorosa 1", "Standard", map);
-				createMarker(new google.maps.LatLng(41.647174, -8.825272, 0.0), "Amorosa 2", "Standard", map);
-				createMarker(new google.maps.LatLng(41.645528, -8.824551, 0.0), "Amorosa 3", "Standard", map);
+				//createMarker(new google.maps.LatLng(41.849744, -8.866315, 0.0), "Moledo 1", "Premium", map);
+				//createMarker(new google.maps.LatLng(41.84891700000001, -8.866267, 0.0), "Moledo 2", "Premium", map);
+				//createMarker(new google.maps.LatLng(41.847530000000006, -8.866439, 0.0), "Moledo 3", "Premium", map);
+				//createMarker(new google.maps.LatLng(41.813842, -8.865452, 0.0), "Vila Praia de Âncora 1", "Standard", map);
+				//createMarker(new google.maps.LatLng(41.812963, -8.864288, 0.0), "Vila Praia de Âncora 2", "Standard", map);
+				//createMarker(new google.maps.LatLng(41.812327, -8.863333, 0.0), "Vila Praia de Âncora 3", "Standard", map);
+				//createMarker(new google.maps.LatLng(41.647639, -8.825219, 0.0), "Amorosa 1", "Standard", map);
+				//createMarker(new google.maps.LatLng(41.647639, -8.825219, 0.0), "Amorosa 1", "Standard", map);
+				//createMarker(new google.maps.LatLng(41.647174, -8.825272, 0.0), "Amorosa 2", "Standard", map);
+				//createMarker(new google.maps.LatLng(41.645528, -8.824551, 0.0), "Amorosa 3", "Standard", map);
 
 				
 				
