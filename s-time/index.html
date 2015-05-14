@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="jquery-1.11.3.min.js"></script>
+		<script src="jquery.simpleWeather.min.js"></script>
+	</head>
+	<body>
+		<h2>S TIME</h2>
+		<div id="weather"></div>
+		<div id="sTime"></div>
+		<script>
+			// Docs at http://simpleweatherjs.com
+			$(document).ready(function() {
+				getWeather();
+				setInterval(function(){
+					getWeather();
+				}, 600000 * 3);
+			});
+			
+			function getWeather() {
+				$.simpleWeather({
+					location: 'Lisboa, Portugal',
+					woeid: '',
+					unit: 'c',
+					success: function(weather) {
+					  html = weather.temp+'&deg;'+weather.units.temp;
+					  if(weather.temp >= 30)
+						$("#sTime").html("<br>ESTÃO MAIS QUE 30 GRAUS! S EXTRA!");
+					  else
+						$("#sTime").html("<br>Infelizmente não há S extra hoje. :(");
+					  $("#weather").html("Temperatura actual: " + html);
+					},
+					error: function(error) {
+					  $("#weather").html('<p>'+error+'</p>');
+					}
+				});
+			}
+		</script>
+	</body>
+</html>
