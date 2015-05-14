@@ -5,9 +5,16 @@
 		<script src="jquery.simpleWeather.min.js"></script>
 	</head>
 	<body>
-		<h2>S TIME</h2>
-		<div id="weather"></div>
-		<div id="sTime"></div>
+		<img id="weather-img" src="" />
+		
+		<div id="info-container">
+			<h1>S TIME</h1>
+			
+			<div id="weather"></div>
+			
+			<div id="sTime"></div>
+		</div>
+		
 		<script>
 			// Docs at http://simpleweatherjs.com
 			$(document).ready(function() {
@@ -28,7 +35,9 @@
 						$("#sTime").html("<br>ESTÃO MAIS QUE 30 GRAUS! S EXTRA!");
 					  else
 						$("#sTime").html("<br>Infelizmente não há S extra hoje. :(");
-					  $("#weather").html("Temperatura actual: " + html);
+					  $("#weather").html("<b>Temperatura actual: </b>" + html + " (" + weather.updated + ")<br>" 
+											+ "<b>Temperatura máxima para hoje: </b>" + weather.high + weather.units.temp);
+					  $("#weather-img").attr("src", weather.image);
 					},
 					error: function(error) {
 					  $("#weather").html('<p>'+error+'</p>');
@@ -36,5 +45,18 @@
 				});
 			}
 		</script>
+		<style>
+			body {
+				text-align: center;
+			}
+			
+			#weather-img {
+				margin-left: 75px;
+			}
+			  
+			#info-container {
+				margin-top: -60px;
+			}
+		</style>
 	</body>
 </html>
