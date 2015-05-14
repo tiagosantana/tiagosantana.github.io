@@ -36,7 +36,7 @@
 					  else
 						$("#sTime").html("<br>Infelizmente não há S extra hoje. :(");
 					  $("#weather").html("<b>Temperatura actual: </b>" + html + " (" + weather.updated + ")<br>" 
-											+ "<b>Temperatura máxima para hoje: </b>" + weather.high + weather.units.temp);
+											+ "<b>Temperatura máxima para hoje: </b>" + weather.high + '&deg;' + weather.units.temp);
 					  $("#weather-img").attr("src", weather.image);
 					},
 					error: function(error) {
