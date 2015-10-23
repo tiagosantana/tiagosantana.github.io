@@ -1,0 +1,7 @@
+# Site settings
+title: Tiago Santana
+description: Um blog feito em Jekyll
+keywords: Modern, Blogging, Fun
+author: Tiago Santana
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "" # the base hostname & protocol for your site
