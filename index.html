@@ -47,11 +47,12 @@ layout: compress
                     <svg class="card__image" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1200"
                          preserveAspectRatio="xMidYMid slice">
-                        <defs>
-                            <clipPath id="{{ post.id }}-clip-path">
-                                <polygon class="clip" points="0,1200 0,0 1920,0 1920,1200"></polygon>
-                            </clipPath>
-                        </defs>
+  						<defs>
+								<clipPath id="clipPath1">
+									<!-- r = 992 = hyp = Math.sqrt(960*960+250*250) -->
+									<circle class="clip" cx="960" cy="250" r="992"></circle>
+								</clipPath>
+							</defs>
                         <image clip-path="url(#{{ post.id }}-clip-path)" width="1920" height="1200"
                                xlink:href="{{ post.image }}"></image>
                     </svg>
