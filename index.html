@@ -18,9 +18,9 @@ layout: compress
 	<link rel="stylesheet" type="text/css" href="css/demo.css" />
 	<link rel="stylesheet" type="text/css" href="css/card.css" />
 	<link rel="stylesheet" type="text/css" href="css/pattern.css" />
-	<!--[if IE]>
-	  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+    <!--[if IE]>
+		<script type="text/javascript" src="js/vendors/html5.min.js"></script>
+    <![endif]-->
 	<script>
 	if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
 		var root = document.getElementsByTagName('html')[0];
@@ -81,14 +81,6 @@ layout: compress
 	<script src="js/demo.js"></script>
 	<script src="js/card-modern-blog.js"></script>
 	<script src="js/modern-blog.js"></script>
-	<script>
-	document.body.addEventListener('keydown', ev => {
-		if (ev.keyCode == 8) {
-			//console.log('preventing backspace navigation');
-			ev.preventDefault();
-		}
-	}, true); // end of event bubble phase
-	</script>
 </body>
 
 </html>
