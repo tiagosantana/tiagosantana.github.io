@@ -1,7 +1,7 @@
 ---
-title:  "A Craftsman Workshop"
-subtitle: "It's always a bit messy"
-author: "Wferr"
+title:  "O Landeiroto"
+subtitle: "Só quer é pau maroto."
+author: "Tiago Santana"
 avatar: "img/authors/wferr.png"
 image: "img/f.jpg"
 date:   2015-04-25 12:12:12
