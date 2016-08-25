@@ -247,11 +247,6 @@
 	100% { opacity: 0; }
 }
 
-/* Hide image and title and show at half time */
-.js .grid li img,
-.js .grid li h3 {
-	visibility: hidden;
-}
 
 .grid li.animate img,
 .grid li.animate h3 {
